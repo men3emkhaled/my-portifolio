@@ -116,7 +116,7 @@ const translations = {
     }
 };
 
-let currentLang = localStorage.getItem('lang') || 'ar';
+let currentLang = localStorage.getItem('lang') || 'en';
 
 function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {

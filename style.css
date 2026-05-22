@@ -911,7 +911,7 @@ body {
     .hero-photo { width:100%; opacity:.35; -webkit-mask-image:none; mask-image:none; }
     .hero-content { padding:0 20px 60px; }
     .hero-overlay-content { position:relative; bottom:auto; right:auto; max-width:100%; margin-top:24px; }
-    .spin-badge { bottom:16px; left:16px; top:auto; right:auto; width:100px; height:100px; }
+    .spin-badge { top:90px; right:16px; bottom:auto; left:auto; width:100px; height:100px; }
     .work-grid { grid-template-columns:1fr; }
     .footer-grid { grid-template-columns:1fr; gap: 36px; }
     .footer-subscribe { max-width: 100%; }
