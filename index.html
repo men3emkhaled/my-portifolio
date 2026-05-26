@@ -7,396 +7,641 @@
     <meta name="description" content="Portfolio of a Software & DevOps Engineer — building web apps, cloud systems, and smart automation bots.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Geist:wght@300;400;500;700;800&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- React and ReactDOM for Dynamic Showcase Hub -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 </head>
-<body>
+<body class="mahadeva-theme loading">
 
-<!-- Particle Canvas -->
-<canvas id="bg-canvas"></canvas>
+<!-- Preloader / Intro Screen -->
+<div class="preloader" id="preloader">
+    <div class="preloader-inner">
+        <span class="preloader-brand">men3em</span>
+        <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+    </div>
+</div>
 
-<div class="page-wrapper">
-
-<!-- ──────────── HEADER ──────────── -->
+<!-- Fixed Premium Glass Navbar -->
 <header class="header" id="header" dir="ltr">
     <div class="header-inner">
         <a href="#home" class="logo" data-i18n="logo">men3em</a>
-        <div style="display:flex; align-items:center; gap:20px;">
+        <div class="nav-controls">
             <nav class="nav">
-                <a href="#home"     class="nav-link active" data-i18n="nav_home">HOME</a>
-                <a href="#about"    class="nav-link" data-i18n="nav_about">ABOUT</a>
-                <a href="#work"     class="nav-link" data-i18n="nav_work">WORK</a>
+                <a href="#home" class="nav-link active" data-i18n="nav_home">HOME</a>
+                <a href="#about" class="nav-link" data-i18n="nav_about">ABOUT</a>
+                <a href="#work" class="nav-link" data-i18n="nav_work">WORK</a>
                 <a href="#services" class="nav-link" data-i18n="nav_services">SERVICES</a>
-                <a href="#contact"  class="nav-link" data-i18n="nav_contact">CONTACT</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">CONTACT</a>
             </nav>
             <button id="lang-toggle" class="lang-btn">AR</button>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar bar-top"></span>
+                <span class="bar bar-bottom"></span>
+            </button>
         </div>
     </div>
 </header>
 
-<!-- ──────────── HERO ──────────── -->
-<section id="home" class="hero" dir="ltr">
+<!-- Mobile Navigation Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu">
+    <nav class="mobile-nav">
+        <a href="#home" class="mobile-nav-link" data-i18n="nav_home">HOME</a>
+        <a href="#about" class="mobile-nav-link" data-i18n="nav_about">ABOUT</a>
+        <a href="#work" class="mobile-nav-link" data-i18n="nav_work">WORK</a>
+        <a href="#services" class="mobile-nav-link" data-i18n="nav_services">SERVICES</a>
+        <a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">CONTACT</a>
+    </nav>
+</div>
 
-    <!-- Full-bleed photo -->
-    <div class="hero-photo-wrap">
-        <img src="./photo.jpg" alt="منعم" class="hero-photo" id="hero-photo"
-             onerror="document.querySelector('.hero-photo-wrap').style.background='linear-gradient(135deg,#1a1a1a 0%,#050505 100%)'">
-        <!-- Gradient overlays to blend photo into black -->
-        <div class="photo-fade-right"></div>
-        <div class="photo-fade-top"></div>
-        <div class="photo-fade-bottom"></div>
-    </div>
+<!-- Main Sticky Wrapper Container -->
+<main class="main-container">
 
-    <!-- Hero Content -->
-    <div class="hero-content">
-
-        <!-- Left Column: Big Title + CTA -->
-        <div class="hero-left-col">
-            <h1 class="hero-title">
-                <span data-i18n="hero_title_1">CODE</span>
-                <span class="ht-orange" data-i18n="hero_title_2">AUTOMATE</span>
-                <span data-i18n="hero_title_3">SCALE</span>
-            </h1>
-            <div class="hero-actions">
-                <a href="#contact" class="cta-btn">
-                    <span data-i18n="hero_cta">LET'S CONTACT</span>
-                    <span class="cta-arrow">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
-            </div>
+    <!-- ──────────── [SECTION 1] HERO (DARK STICKY) ──────────── -->
+    <section id="home" class="hero-section sticky-section" dir="ltr">
+        <!-- Interactive Pixel Grid Engine Canvas/Container -->
+        <div class="pixel-grid" id="pixel-grid-container">
+            <div class="pixel-column"></div>
+            <div class="pixel-column"></div>
+            <div class="pixel-column"></div>
+            <div class="pixel-column"></div>
         </div>
 
-        <!-- Right Column: Description overlay -->
-        <div class="hero-overlay-content" dir="ltr">
-            <div class="hero-desc-card">
-                <span class="hero-desc-tag">// SYSTEM STATEMENT</span>
-                <p class="hero-desc" data-i18n="hero_desc">
-                    Full-stack engineer turning ideas into production-ready systems — from responsive web apps and mobile clients to cloud infrastructure and smart integrations.
-                </p>
-            </div>
+        <!-- Floating Geometric Shapes -->
+        <div class="geo-shapes" aria-hidden="true">
+            <div class="geo-shape shape-1"></div>
+            <div class="geo-shape shape-2"></div>
+            <div class="geo-shape shape-3"></div>
+            <div class="geo-shape shape-4"></div>
+            <div class="geo-shape shape-5"></div>
+            <div class="geo-shape shape-6"></div>
+            <div class="geo-shape shape-7"></div>
+            <div class="geo-shape shape-8"></div>
+            <div class="geo-shape shape-9"></div>
+            <div class="geo-shape shape-10"></div>
         </div>
-    </div>
 
-    <!-- Spinning badge (positioned relative to hero section) -->
-    <div class="spin-badge" id="spin-badge">
-        <div class="sb-outer-ring"></div>
-        <svg class="sb-text" viewBox="0 0 140 140">
-            <defs>
-                <path id="sp" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/>
-            </defs>
-            <text font-size="9" fill="rgba(255,255,255,.4)" letter-spacing="3.5" font-family="Outfit,sans-serif" font-weight="800">
-                <textPath href="#sp" id="sb-text-path" data-i18n="spin_badge_path">SOFTWARE • DEVOPS • ENGINEER • AUTOMATION • SYSTEMS •</textPath>
-            </text>
-        </svg>
-        <div class="sb-core">
-            <div class="sb-sonar"></div>
-            <div class="sb-dot"></div>
-        </div>
-    </div>
-</section>
+        <div class="hero-body hero-body-centered">
+            <div class="hero-text-wrapper hero-text-centered">
+                <h1 class="hero-title-main hero-title-centered">
+                    <span class="title-reveal" data-i18n="hero_title_1">CODE</span>
+                    <span class="title-reveal text-accent-blue" data-i18n="hero_title_2">INTEGRATE</span>
+                    <span class="title-reveal text-accent-green" data-i18n="hero_title_3">SCALE</span>
+                </h1>
+                
+                <div class="hero-desc-wrapper hero-desc-centered">
+                    <p class="hero-desc-para" data-i18n="hero_desc">
+                        Full-stack engineer turning ideas into production-ready systems — from responsive web apps and mobile clients to cloud infrastructure and smart integrations.
+                    </p>
+                </div>
 
-<!-- ──────────── ABOUT ──────────── -->
-<section id="about" class="about">
-    <div class="container">
-        <p class="section-label" data-i18n="about_label">(ABOUT ME)</p>
-        <div class="about-grid">
-            <p class="about-text" data-i18n="about_text">
-                I am a Software and DevOps Engineer with practical experience in building websites, mobile apps using Flutter/Dart, and smart automation systems/bots. I transform complex ideas into stable, fast, and scalable software solutions.
-            </p>
-            <a href="#contact" class="cta-btn">
-                <span data-i18n="about_cta">LET'S CONTACT</span>
-                <span class="cta-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-        </div>
-        <div class="stats-grid">
-            <!-- Card 1: Label Top, Number Bottom -->
-            <div class="stat-card">
-                <div class="stat-label-wrap">
-                    <span class="stat-l" data-i18n="stat_exp">YEARS EXPERIENCE</span>
-                </div>
-                <div class="stat-num-wrap">
-                    <h3 class="stat-n" data-t="1">0</h3>
-                </div>
-            </div>
-            <!-- Card 2: Number Top, Label Bottom -->
-            <div class="stat-card">
-                <div class="stat-num-wrap">
-                    <h3 class="stat-n" data-t="8">0</h3>
-                </div>
-                <div class="stat-label-wrap">
-                    <span class="stat-l" data-i18n="stat_proj">SUCCESSFUL PROJECTS</span>
-                </div>
-            </div>
-            <!-- Card 3: Label Top, Number Bottom -->
-            <div class="stat-card">
-                <div class="stat-label-wrap">
-                    <span class="stat-l" data-i18n="stat_users">TOTAL USERS</span>
-                </div>
-                <div class="stat-num-wrap">
-                    <h3 class="stat-n" data-t="10000">0</h3>
-                </div>
-            </div>
-            <!-- Card 4: Number Top, Label Bottom -->
-            <div class="stat-card">
-                <div class="stat-num-wrap">
-                    <h3 class="stat-n" data-t="15">0</h3>
-                </div>
-                <div class="stat-label-wrap">
-                    <span class="stat-l" data-i18n="stat_tech">TECHNOLOGIES USED</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ──────────── WORK ──────────── -->
-<section id="work" class="work">
-    <div class="container">
-        <p class="section-label" data-i18n="work_label">(SELECTED WORK)</p>
-        <div class="work-grid">
-
-            <!-- Card 1: ZNU -->
-            <div class="proj-card" onclick="openProjectDetails('znu')" style="cursor: pointer;">
-                <div class="proj-visual pv-znu">
-                    <div class="pv-mockup">
-                        <div class="pm-bar"><span></span><span></span><span></span></div>
-                        <img src="image.png" alt="ZNU Portal" class="pm-img">
-                    </div>
-                    <div class="pv-mobile">
-                        <img src="image copy.png" alt="ZNU Mobile App" class="pm-mobile-img">
-                    </div>
-                </div>
-                <div class="proj-info">
-                    <div class="proj-info-left">
-                        <h3 class="proj-title" data-i18n="work_proj1_title">ZNU PLATFORM</h3>
-                        <p class="proj-cat" data-i18n="work_proj1_cat">Zagazig National University Platform — Web Portal + Flutter Mobile App</p>
-                    </div>
-                    <div class="proj-info-right">
-                        <div class="proj-year"><span>●</span> 2023</div>
-                        <div class="proj-arrow">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Tazkarti -->
-            <div class="proj-card" onclick="openProjectDetails('tazkarti')" style="cursor: pointer;">
-                <div class="proj-visual pv-tazkarti">
-                    <div class="pv-bot">
-                        <div class="bot-hd"><div class="bot-av">T</div><div><b>Tazkarti Monitor</b><small>bot · 7,000+ users</small></div></div>
-                        <div class="bot-msg" data-i18n="work_proj2_msg1">Scanning tickets...</div>
-                        <div class="bot-msg bot-alert" data-i18n="work_proj2_msg2">Alert! Tickets available now</div>
-                    </div>
-                </div>
-                <div class="proj-info">
-                    <div class="proj-info-left">
-                        <h3 class="proj-title" data-i18n="work_proj2_title">TAZKARTI MONITOR</h3>
-                        <p class="proj-cat" data-i18n="work_proj2_cat">Tazkarti Monitoring Bot — Python / Asyncio / Telegram</p>
-                    </div>
-                    <div class="proj-info-right">
-                        <div class="proj-year"><span>●</span> 2024</div>
-                        <div class="proj-arrow">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Agent Assistant -->
-            <div class="proj-card" onclick="openProjectDetails('agent-assistant')" style="cursor: pointer;">
-                <div class="proj-visual pv-agent">
-                    <img src="image copy 2.png" alt="Agent Assistant Extension" class="pv-full-img">
-                </div>
-                <div class="proj-info">
-                    <div class="proj-info-left">
-                        <h3 class="proj-title" data-i18n="work_proj3_title">AGENT ASSISTANT</h3>
-                        <p class="proj-cat" data-i18n="work_proj3_cat">Agent Assistant Chrome Extension — JS / LLM APIs</p>
-                    </div>
-                    <div class="proj-info-right">
-                        <div class="proj-year"><span>●</span> 2025</div>
-                        <div class="proj-arrow">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: Media Downloader -->
-            <div class="proj-card" onclick="openProjectDetails('media-downloader')" style="cursor: pointer;">
-                <div class="proj-visual pv-dl">
-                    <div class="pv-dl-ui">
-                        <div class="dl-row"><span>video_4K.mp4</span><span class="dl-pct">92%</span></div>
-                        <div class="dl-track"><div class="dl-fill" style="width:92%"></div></div>
-                        <div class="dl-plats"><span>YouTube</span><span>Facebook</span><span>Instagram</span><span>TikTok</span></div>
-                    </div>
-                </div>
-                <div class="proj-info">
-                    <div class="proj-info-left">
-                        <h3 class="proj-title" data-i18n="work_proj4_title">MEDIA DOWNLOADER</h3>
-                        <p class="proj-cat" data-i18n="work_proj4_cat">Media Downloader Bot — Node.js / FFmpeg / Multi-Platform</p>
-                    </div>
-                    <div class="proj-info-right">
-                        <div class="proj-year"><span>●</span> 2024</div>
-                        <div class="proj-arrow">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="work-footer">
-            <a href="javascript:void(0)" onclick="openAllWorks()" class="cta-btn cta-dark">
-                <span data-i18n="work_see_all">SEE ALL WORKS</span>
-                <span class="cta-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ──────────── SERVICES ──────────── -->
-<section id="services" class="services">
-    <div class="container">
-        <div class="services-box">
-            <!-- Left Column: Expertise info -->
-            <div class="services-left">
-                <p class="section-label" data-i18n="services_label">(SERVICES)</p>
-                <h2 class="services-title" data-i18n="services_title_main">SERVICE EXPERTISE</h2>
-                <p class="services-desc" data-i18n="services_desc_main">
-                    Combining deep technical experience with modern automation practices to deliver fast, scalable, and secure software solutions. My services cover full-stack development, cloud infrastructure, and smart task automation.
-                </p>
-                <div style="margin-top:40px;">
-                    <a href="#contact" class="cta-btn">
-                        <span data-i18n="services_cta">LET'S TALK</span>
-                        <span class="cta-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <div class="hero-cta-wrapper hero-cta-centered">
+                    <a href="#contact" class="pixel-btn">
+                        <span data-i18n="hero_cta">LET'S CONTACT</span>
+                        <span class="btn-arrow">↗</span>
                     </a>
                 </div>
             </div>
-
-            <!-- Right Column: Interactive list -->
-            <div class="services-right">
-                <!-- Item 1 -->
-                <div class="srv-row" onclick="openWorksWithFilter('Web')">
-                    <div class="srv-row-left">
-                        <h3 class="srv-row-title" data-i18n="service1_title">Software Development</h3>
-                        <p class="srv-row-desc" data-i18n="service1_desc">Building fast, responsive websites and cross-platform mobile apps using Flutter and modern tech.</p>
-                    </div>
-                    <div class="srv-row-btn">
-                        <span data-i18n="services_discover">DISCOVER</span>
-                        <svg class="srv-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="srv-row" onclick="openWorksWithFilter('DevOps')">
-                    <div class="srv-row-left">
-                        <h3 class="srv-row-title" data-i18n="service2_title">DevOps & Cloud</h3>
-                        <p class="srv-row-desc" data-i18n="service2_desc">Managing cloud infrastructure, setting up CI/CD, performance monitoring, and server scaling.</p>
-                    </div>
-                    <div class="srv-row-btn">
-                        <span data-i18n="services_discover">DISCOVER</span>
-                        <svg class="srv-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="srv-row" onclick="openWorksWithFilter('Automation')">
-                    <div class="srv-row-left">
-                        <h3 class="srv-row-title" data-i18n="service3_title">Automation & Bots</h3>
-                        <p class="srv-row-desc" data-i18n="service3_desc">Creating smart Telegram/WhatsApp automation bots, scrapers, and custom script tools.</p>
-                    </div>
-                    <div class="srv-row-btn">
-                        <span data-i18n="services_discover">DISCOVER</span>
-                        <svg class="srv-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ──────────── CONTACT / COLLABORATE ──────────── -->
-<section id="contact" class="contact">
-    <div class="container">
-        <div class="collab-wrapper">
-            <p class="collab-sub" data-i18n="collab_sub_label">Let's Get Started</p>
-            <h2 class="collab-title" data-i18n="collab_title_main">LET'S COLLABORATE</h2>
         </div>
 
-        <div class="footer-grid">
-            <!-- Left Info -->
-            <div class="footer-col brand-col">
-                <a href="#home" class="logo footer-logo" data-i18n="logo">men3em</a>
-                <p class="footer-brand-desc" data-i18n="footer_brand_desc">
-                    I build, develop, and manage integrated systems and software with a focus on efficiency, automation, and scalability.
-                </p>
-                <div class="footer-subscribe">
-                    <input type="email" placeholder="men3emofficial@gmail.com" readonly value="men3emofficial@gmail.com" class="sub-input">
-                    <a href="mailto:men3emofficial@gmail.com" class="sub-btn" data-i18n="footer_sub_btn">Email Me</a>
-                </div>
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
             </div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+    </section>
 
-            <!-- Col 2: Pages -->
-            <div class="footer-col">
-                <h4 class="footer-col-title" data-i18n="footer_col_pages">Pages</h4>
-                <ul class="footer-links-list">
-                    <li><a href="#home" data-i18n="nav_home">HOME</a></li>
-                    <li><a href="#about" data-i18n="nav_about">ABOUT</a></li>
-                    <li><a href="#work" data-i18n="nav_work">WORK</a></li>
-                    <li><a href="#services" data-i18n="nav_services">SERVICES</a></li>
-                    <li><a href="#contact" data-i18n="nav_contact">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Projects -->
-            <div class="footer-col">
-                <h4 class="footer-col-title" data-i18n="footer_col_projects">Projects</h4>
-                <ul class="footer-links-list">
-                    <li><a href="https://www.znu-cs.online/student/login" target="_blank">ZNU Student Login</a></li>
-                    <li><a href="https://t.me/tazkaarti" target="_blank">Tazkarti Monitor</a></li>
-                    <li><a href="https://open-vsx.org/extension/Men3emkhaled/agent-assistant" target="_blank">Agent Assistant</a></li>
-                    <li><a href="https://github.com/men3emkhaled/IntelliQos" target="_blank">IntelliQos</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 4: Socials -->
-            <div class="footer-col socials-col">
-                <h4 class="footer-col-title" data-i18n="footer_col_socials">Socials</h4>
-                <ul class="footer-links-list">
-                    <li>
-                        <a href="https://github.com/men3emkhaled" target="_blank" class="social-link-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                            GitHub <span class="arrow-diag">↗</span>
+    <!-- ──────────── [SECTION 2] ABOUT ME (LIGHT STICKY OVERLAP) ──────────── -->
+    <div class="about-scroll-wrapper">
+        <section id="about" class="about-section">
+            <div class="section-bg-cream"></div>
+        
+        <div class="container about-container">
+            <p class="section-label" data-i18n="about_label">{ABOUT ME}</p>
+            
+            <div class="about-grid">
+                <div class="about-content-left">
+                    <p class="about-paragraph" data-i18n="about_text">
+                        I am a Software and DevOps Engineer with practical experience in building websites, mobile apps using Flutter/Dart, and smart automation systems/bots. I transform complex ideas into stable, fast, and scalable software solutions.
+                    </p>
+                    <div class="about-action">
+                        <a href="#contact" class="pixel-btn btn-dark">
+                            <span data-i18n="about_cta">LET'S CONTACT</span>
+                            <span class="btn-arrow">↗</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/abdelmoneim-khaled-5547b4391/" target="_blank" class="social-link-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            LinkedIn <span class="arrow-diag">↗</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://t.me/men3emk" target="_blank" class="social-link-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                            Telegram <span class="arrow-diag">↗</span>
-                        </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+
+                <div class="about-interactive-right">
+                    <!-- Concentric Tech Radar -->
+                    <div class="tech-radar-viewport">
+                        <div class="radar-center">
+                            <div class="radar-pulse"></div>
+                            <span class="radar-core-text">DEV</span>
+                        </div>
+                        <div class="radar-ring ring-1"></div>
+                        <div class="radar-ring ring-2"></div>
+                        <div class="radar-ring ring-3"></div>
+
+                        <!-- Orbiting Nodes — manually positioned for visual balance -->
+                        <div class="radar-node" style="top: 8%;  left: 50%;">  <span>Flutter</span></div>
+                        <div class="radar-node" style="top: 25%; left: 88%;"> <span>Python</span></div>
+                        <div class="radar-node" style="top: 68%; left: 92%;"> <span>Docker</span></div>
+                        <div class="radar-node" style="top: 90%; left: 50%;"> <span>AWS</span></div>
+                        <div class="radar-node" style="top: 68%; left: 8%;">  <span>Dart</span></div>
+                        <div class="radar-node" style="top: 25%; left: 12%;"> <span>Linux</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Highlight Cards -->
+            <div class="stats-marquee-wrapper">
+                <div class="stats-grid">
+                    <!-- Stat Card 1 -->
+                    <div class="stat-card">
+                        <div class="stat-card-inner">
+                            <h3 class="stat-number" data-t="1">0</h3>
+                            <span class="stat-title" data-i18n="stat_exp">YEARS EXPERIENCE</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="stat-card">
+                        <div class="stat-card-inner">
+                            <h3 class="stat-number" data-t="8">0</h3>
+                            <span class="stat-title" data-i18n="stat_proj">SUCCESSFUL PROJECTS</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="stat-card">
+                        <div class="stat-card-inner">
+                            <h3 class="stat-number" data-t="10000">0</h3>
+                            <span class="stat-title" data-i18n="stat_users">TOTAL USERS</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="stat-card">
+                        <div class="stat-card-inner">
+                            <h3 class="stat-number" data-t="15">0</h3>
+                            <span class="stat-title" data-i18n="stat_tech">TECHNOLOGIES USED</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <p data-i18n="footer_copy">© Copyright 2026 | Design By Men3em | All rights reserved</p>
-        </div>
-    </div>
-</section>
-
+    </section>
 </div>
+
+    <!-- ──────────── [NEW SECTION] TECH STACK (MAHADEVA-STYLE TOOL GRID) ──────────── -->
+    <div class="skills-scroll-wrapper">
+        <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="skills-header">
+                <div class="skills-header-left">
+                    <p class="section-label" data-i18n="tools_label">{TECHNICAL STACK}</p>
+                    <h2 class="skills-section-title" data-i18n="skills_title">Tech Ecosystem</h2>
+                </div>
+                <div class="skills-header-right">
+                    <p class="skills-section-subtitle" data-i18n="skills_subtitle">A rich ecosystem of frameworks, scripting libraries, and cloud platforms crafted to build high-performance products, robust backends, and flawless automation pipelines.</p>
+                </div>
+            </div>
+            <div class="stack-carousel">
+                <!-- Slide 1: Frontend -->
+                <div class="stack-slide" data-slide="0">
+                    <div class="stack-slide__main card-pastel-pink">
+                        <div class="stack-slide__dots"></div>
+                        <svg class="stack-slide__icon" viewBox="0 0 64 64" fill="none"><path d="M8 12h48v36H8z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M16 20h10M16 26h16M16 32h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="44" cy="32" r="6" stroke="currentColor" stroke-width="2"/></svg>
+                        <span class="stack-slide__title">Frontend</span>
+                    </div>
+                    <div class="stack-slide__tools">
+                        <div class="tool-chip" style="--chip-index: 0;">JavaScript</div>
+                        <div class="tool-chip" style="--chip-index: 1;">React</div>
+                        <div class="tool-chip" style="--chip-index: 2;">HTML5</div>
+                        <div class="tool-chip" style="--chip-index: 3;">CSS3</div>
+                        <div class="tool-chip" style="--chip-index: 4;">Flutter</div>
+                        <div class="tool-chip" style="--chip-index: 5;">Dart</div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Backend -->
+                <div class="stack-slide" data-slide="1">
+                    <div class="stack-slide__main card-pastel-purple">
+                        <div class="stack-slide__dots"></div>
+                        <svg class="stack-slide__icon" viewBox="0 0 64 64" fill="none"><path d="M12 16a20 10 0 0 1 40 0v4a20 10 0 0 1-40 0v-4z" stroke="currentColor" stroke-width="2.5"/><path d="M12 20v12a20 10 0 0 0 40 0V20" stroke="currentColor" stroke-width="2.5"/><path d="M12 32v12a20 10 0 0 0 40 0V32" stroke="currentColor" stroke-width="2.5"/></svg>
+                        <span class="stack-slide__title">Backend</span>
+                    </div>
+                    <div class="stack-slide__tools">
+                        <div class="tool-chip" style="--chip-index: 0;">Python</div>
+                        <div class="tool-chip" style="--chip-index: 1;">Node.js</div>
+                        <div class="tool-chip" style="--chip-index: 2;">REST APIs</div>
+                        <div class="tool-chip" style="--chip-index: 3;">PostgreSQL</div>
+                        <div class="tool-chip" style="--chip-index: 4;">MongoDB</div>
+                        <div class="tool-chip" style="--chip-index: 5;">Firebase</div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: DevOps -->
+                <div class="stack-slide" data-slide="2">
+                    <div class="stack-slide__main card-pastel-yellow">
+                        <div class="stack-slide__dots"></div>
+                        <svg class="stack-slide__icon" viewBox="0 0 64 64" fill="none"><rect x="8" y="18" width="48" height="32" rx="4" stroke="currentColor" stroke-width="2.5"/><path d="M22 30l-6 6 6 6M42 30l6 6-6 6M36 26l-8 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="stack-slide__title">DevOps</span>
+                    </div>
+                    <div class="stack-slide__tools">
+                        <div class="tool-chip" style="--chip-index: 0;">Docker</div>
+                        <div class="tool-chip" style="--chip-index: 1;">Linux</div>
+                        <div class="tool-chip" style="--chip-index: 2;">CI/CD</div>
+                        <div class="tool-chip" style="--chip-index: 3;">AWS</div>
+                        <div class="tool-chip" style="--chip-index: 4;">Nginx</div>
+                        <div class="tool-chip" style="--chip-index: 5;">Git</div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Automation -->
+                <div class="stack-slide" data-slide="3">
+                    <div class="stack-slide__main card-pastel-green">
+                        <div class="stack-slide__dots"></div>
+                        <svg class="stack-slide__icon" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="10" stroke="currentColor" stroke-width="2.5"/><path d="M18 52c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M42 30l6-6M48 24l-3-3 3-3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span class="stack-slide__title">Automation</span>
+                    </div>
+                    <div class="stack-slide__tools">
+                        <div class="tool-chip" style="--chip-index: 0;">Telegram Bots</div>
+                        <div class="tool-chip" style="--chip-index: 1;">Web Scraping</div>
+                        <div class="tool-chip" style="--chip-index: 2;">AI Agents</div>
+                        <div class="tool-chip" style="--chip-index: 3;">Cron Jobs</div>
+                        <div class="tool-chip" style="--chip-index: 4;">Bash Scripts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <section id="work" class="work-section slide-over-section">
+        <div class="container">
+            <div class="work-section-header">
+                <div class="work-header-left">
+                    <h2 class="work-section-title" data-i18n="work_title">Latest works</h2>
+                    <p class="work-section-subtitle" data-i18n="work_subtitle">See how software engineering, DevOps, and automation transformed performance across platforms.</p>
+                </div>
+                <div class="work-header-right">
+                    <a href="javascript:void(0)" onclick="openAllWorks()" class="more-case-studies-btn">
+                        <span data-i18n="work_more_cases">MORE CASE STUDIES</span>
+                        <span class="arrow-icon-box">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Premium Stacked Grid Layout -->
+            <div class="projects-premium-list">
+                
+                <!-- Card 1: ZNU Portal -->
+                <div class="project-card-premium" onclick="openProjectDetails('znu')">
+                    <!-- Left side: Content & Metrics -->
+                    <div class="premium-card-left bg-pastel-blue">
+                        <div class="premium-card-header">
+                            <span class="project-category-logo">
+                                <svg class="cat-logo-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                                <span class="project-category-text">DEVOPS</span>
+                            </span>
+                            <span class="project-year-badge">2026</span>
+                        </div>
+                        <div class="premium-card-body">
+                            <h3 class="premium-project-title" data-i18n="work_proj1_title">Academic Portal Built for University Ecosystems</h3>
+                            <p class="premium-project-desc" data-i18n="work_proj1_desc">A secure, containerized academic portal serving 3 main hubs (Admin, Lecturer, and Student portals) alongside timetables and course tracking.</p>
+                        </div>
+                        <div class="premium-project-metrics">
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj1_m1_lbl">Active Students</span>
+                                <span class="metric-value" data-i18n="work_proj1_m1_val">1,000+</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj1_m2_lbl">System Uptime</span>
+                                <span class="metric-value" data-i18n="work_proj1_m2_val">99.9%</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj1_m3_lbl">Response Time</span>
+                                <span class="metric-value" data-i18n="work_proj1_m3_val">&lt; 120ms</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj1_m4_lbl">System Portals</span>
+                                <span class="metric-value" data-i18n="work_proj1_m4_val">3 Hubs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side: Visual Showcase mockup -->
+                    <div class="premium-card-right bg-mockup-blue">
+                        <div class="premium-mockup-wrapper">
+                            <div class="web-mockup">
+                                <div class="mockup-bar"><span></span><span></span><span></span></div>
+                                <img src="image.png" alt="ZNU Portal" class="mockup-img">
+                            </div>
+                            <div class="mobile-mockup">
+                                <img src="image copy.png" alt="ZNU Mobile App" class="mobile-mockup-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tazkarti Monitor -->
+                <div class="project-card-premium" onclick="openProjectDetails('tazkarti')">
+                    <!-- Left side: Content & Metrics -->
+                    <div class="premium-card-left bg-pastel-green">
+                        <div class="premium-card-header">
+                            <span class="project-category-logo">
+                                <svg class="cat-logo-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                <span class="project-category-text">TAZKARTI MONITOR</span>
+                            </span>
+                            <span class="project-year-badge">2026</span>
+                        </div>
+                        <div class="premium-card-body">
+                            <h3 class="premium-project-title" data-i18n="work_proj2_title">Automated Ticket Monitor & Real-Time Alert Engine</h3>
+                            <p class="premium-project-desc" data-i18n="work_proj2_desc">A high-performance monitoring bot tracking seat categories and ticket availability with instant Telegram alerts.</p>
+                        </div>
+                        <div class="premium-project-metrics">
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj2_m1_lbl">Active Fans Alerted</span>
+                                <span class="metric-value" data-i18n="work_proj2_m1_val">7,000+</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj2_m2_lbl">Checking Interval</span>
+                                <span class="metric-value" data-i18n="work_proj2_m2_val">5.0s</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj2_m3_lbl">Notifications Sent</span>
+                                <span class="metric-value" data-i18n="work_proj2_m3_val">250K+</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj2_m4_lbl">Success Rate</span>
+                                <span class="metric-value" data-i18n="work_proj2_m4_val">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side: Visual Showcase mockup -->
+                    <div class="premium-card-right bg-mockup-green">
+                        <div class="premium-mockup-wrapper">
+                            <div class="telegram-bot-mockup">
+                                <div class="tg-header">
+                                    <div class="tg-avatar">T</div>
+                                    <div class="tg-info">
+                                        <span class="tg-name">Tazkarti Monitor</span>
+                                        <span class="tg-status">bot · 7,000+ fans</span>
+                                    </div>
+                                </div>
+                                <div class="tg-msg" data-i18n="work_proj2_msg1">Scanning tickets...</div>
+                                <div class="tg-msg tg-alert" data-i18n="work_proj2_msg2">Alert! Tickets available now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Agent Assistant -->
+                <div class="project-card-premium" onclick="openProjectDetails('agent-assistant')">
+                    <!-- Left side: Content & Metrics -->
+                    <div class="premium-card-left bg-pastel-purple">
+                        <div class="premium-card-header">
+                            <span class="project-category-logo">
+                                <svg class="cat-logo-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                <span class="project-category-text">AGENT ASSISTANT</span>
+                            </span>
+                            <span class="project-year-badge">2026</span>
+                        </div>
+                        <div class="premium-card-body">
+                            <h3 class="premium-project-title" data-i18n="work_proj3_title">AI Expert Persona & Multi-Account Extension for VS Code</h3>
+                            <p class="premium-project-desc" data-i18n="work_proj3_desc">A productivity extension managing Antigravity accounts, real-time balances, and persistent prompt personas.</p>
+                        </div>
+                        <div class="premium-project-metrics">
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj3_m1_lbl">Active Developers</span>
+                                <span class="metric-value" data-i18n="work_proj3_m1_val">1,000+</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj3_m2_lbl">Prompt Personas</span>
+                                <span class="metric-value" data-i18n="work_proj3_m2_val">1,440 Skills</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj3_m3_lbl">Time Saved / Day</span>
+                                <span class="metric-value" data-i18n="work_proj3_m3_val">45 mins</span>
+                            </div>
+                            <div class="premium-metric-item">
+                                <span class="metric-label" data-i18n="work_proj3_m4_lbl">Re-injection Speed</span>
+                                <span class="metric-value" data-i18n="work_proj3_m4_val">&lt; 50ms</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right side: Visual Showcase mockup -->
+                    <div class="premium-card-right bg-mockup-purple">
+                        <div class="premium-mockup-wrapper">
+                            <div class="agent-extension-mockup">
+                                <img src="image copy 2.png" alt="Agent Assistant Extension" class="extension-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="work-action-footer">
+                <a href="javascript:void(0)" onclick="openAllWorks()" class="pixel-btn btn-outline">
+                    <span data-i18n="work_see_all">SEE ALL WORKS</span>
+                    <span class="btn-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────── [SECTION 4] SERVICES (ACCORDION & 3D STAGE) ──────────── -->
+    <section id="services" class="services-section slide-over-section">
+        <div class="container services-container">
+            <div class="services-split-layout">
+                <!-- Left Sticky Stage Column -->
+                <div class="services-stage-col">
+                    <p class="section-label" data-i18n="services_label">{SERVICES}</p>
+                    <h2 class="services-main-title" data-i18n="services_title_main">SERVICE EXPERTISE</h2>
+                    <p class="services-main-desc" data-i18n="services_desc_main">
+                        Combining deep technical experience with modern automation practices to deliver fast, scalable, and secure software solutions. My services cover full-stack development, cloud infrastructure, and smart task automation.
+                    </p>
+
+                    <!-- Morphing CSS 3D Holographic Stage -->
+                    <div class="stage-3d-viewport">
+                        <div class="stage-light-glow"></div>
+                        <div class="hologram-stage-floor"></div>
+
+                        <!-- Hologram 1: Web Cube (Active by default) -->
+                        <div class="stage-hologram active" id="holo-software">
+                            <div class="hologram-cube">
+                                <div class="cube-side face-front">&lt;code&gt;</div>
+                                <div class="cube-side face-back">Flutter</div>
+                                <div class="cube-side face-left">API</div>
+                                <div class="cube-side face-right">Web</div>
+                                <div class="cube-side face-top">App</div>
+                                <div class="cube-side face-bottom">UX</div>
+                            </div>
+                        </div>
+
+                        <!-- Hologram 2: DevOps Infinity Loop -->
+                        <div class="stage-hologram" id="holo-devops">
+                            <div class="hologram-infinity">
+                                <div class="inf-orbit orbit-1"></div>
+                                <div class="inf-orbit orbit-2"></div>
+                                <span class="inf-label">CI/CD</span>
+                            </div>
+                        </div>
+
+                        <!-- Hologram 3: Automation Gears -->
+                        <div class="stage-hologram" id="holo-automation">
+                            <div class="hologram-automation">
+                                <div class="hologram-gear gear-large">⚡</div>
+                                <div class="hologram-gear gear-medium">⚙️</div>
+                                <div class="hologram-gear gear-small">🤖</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="services-cta-wrap">
+                        <a href="#contact" class="pixel-btn">
+                            <span data-i18n="services_cta">LET'S TALK</span>
+                            <span class="btn-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Accordion Column -->
+                <div class="services-accordion-col">
+                    <!-- Service Row 1 -->
+                    <div class="srv-row active" data-service="software" onclick="openWorksWithFilter('Web')">
+                        <div class="srv-row-header">
+                            <h3 class="srv-row-title" data-i18n="service1_title">Software Development</h3>
+                            <span class="srv-row-icon"></span>
+                        </div>
+                        <div class="srv-row-content">
+                            <p class="srv-row-text" data-i18n="service1_desc">Building fast, responsive websites and cross-platform mobile apps using Flutter and modern tech.</p>
+                            <span class="srv-row-cta" data-i18n="services_discover">DISCOVER</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Row 2 -->
+                    <div class="srv-row" data-service="devops" onclick="openWorksWithFilter('DevOps')">
+                        <div class="srv-row-header">
+                            <h3 class="srv-row-title" data-i18n="service2_title">DevOps & Cloud</h3>
+                            <span class="srv-row-icon"></span>
+                        </div>
+                        <div class="srv-row-content">
+                            <p class="srv-row-text" data-i18n="service2_desc">Managing cloud infrastructure, setting up CI/CD, performance monitoring, and server scaling.</p>
+                            <span class="srv-row-cta" data-i18n="services_discover">DISCOVER</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Row 3 -->
+                    <div class="srv-row" data-service="automation" onclick="openWorksWithFilter('Automation')">
+                        <div class="srv-row-header">
+                            <h3 class="srv-row-title" data-i18n="service3_title">Automation & Bots</h3>
+                            <span class="srv-row-icon"></span>
+                        </div>
+                        <div class="srv-row-content">
+                            <p class="srv-row-text" data-i18n="service3_desc">Creating smart Telegram/WhatsApp automation bots, scrapers, and custom script tools.</p>
+                            <span class="srv-row-cta" data-i18n="services_discover">DISCOVER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ──────────── [SECTION 6] CONTACT (DARK STICKY FOOTER) ──────────── -->
+    <div class="contact-scroll-wrapper">
+        <section id="contact" class="contact-section sticky-section">
+            <div class="collab-gate">
+                <div class="gate-half gate-left"></div>
+                <div class="gate-half gate-right"></div>
+                <div class="gate-content">
+                    <h2 class="gate-text" data-i18n="gate_ready">Are You Ready?</h2>
+                </div>
+            </div>
+            <div class="container contact-container">
+            <div class="collab-wrapper">
+                <p class="collab-sub-text" data-i18n="collab_sub_label">Let's Get Started</p>
+                <h2 class="collab-title-text" data-i18n="collab_title_main">LET'S COLLABORATE</h2>
+            </div>
+
+            <div class="footer-grid">
+                <!-- Brand Columns -->
+                <div class="footer-column brand-column">
+                    <a href="#home" class="logo footer-logo" data-i18n="logo">men3em</a>
+                    <p class="footer-brand-description" data-i18n="footer_brand_desc">
+                        I build, develop, and manage integrated systems and software with a focus on efficiency, automation, and scalability.
+                    </p>
+                    
+                    <div class="footer-subscribe-box">
+                        <input type="email" placeholder="men3emofficial@gmail.com" readonly value="men3emofficial@gmail.com" class="sub-input-box">
+                        <a href="mailto:men3emofficial@gmail.com" class="sub-action-btn" data-i18n="footer_sub_btn">Email Me</a>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="footer-column links-column">
+                    <h4 class="footer-col-header" data-i18n="footer_col_pages">Pages</h4>
+                    <ul class="footer-link-items">
+                        <li><a href="#home" data-i18n="nav_home">HOME</a></li>
+                        <li><a href="#about" data-i18n="nav_about">ABOUT</a></li>
+                        <li><a href="#work" data-i18n="nav_work">WORK</a></li>
+                        <li><a href="#services" data-i18n="nav_services">SERVICES</a></li>
+                        <li><a href="#contact" data-i18n="nav_contact">CONTACT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Projects Link Columns -->
+                <div class="footer-column links-column">
+                    <h4 class="footer-col-header" data-i18n="footer_col_projects">Projects</h4>
+                    <ul class="footer-link-items">
+                        <li><a href="https://www.znu-cs.online/student/login" target="_blank">ZNU Student Login</a></li>
+                        <li><a href="https://t.me/tazkaarti" target="_blank">Tazkarti Monitor</a></li>
+                        <li><a href="https://open-vsx.org/extension/Men3emkhaled/agent-assistant" target="_blank">Agent Assistant</a></li>
+                        <li><a href="https://github.com/men3emkhaled/IntelliQos" target="_blank">IntelliQos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Connection Columns -->
+                <div class="footer-column socials-column">
+                    <h4 class="footer-col-header" data-i18n="footer_col_socials">Socials</h4>
+                    <ul class="footer-link-items">
+                        <li>
+                            <a href="https://github.com/men3emkhaled" target="_blank" class="social-icon-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                GitHub <span class="arrow-diagonal">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/abdelmoneim-khaled-5547b4391/" target="_blank" class="social-icon-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                LinkedIn <span class="arrow-diagonal">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/men3emk" target="_blank" class="social-icon-link">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                Telegram <span class="arrow-diagonal">↗</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p data-i18n="footer_copy">© Copyright 2026 | Design By Men3em | All rights reserved</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</main>
 
 <!-- React Mount Point for Interactive Dynamic Showcase Drawer -->
 <div id="project-hub-root"></div>
